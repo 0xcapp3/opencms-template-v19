@@ -3,8 +3,12 @@
 /build/
 /output/
 /.gradle
+/.idea
 /.sass-cache/
 /.vscode/
 /module-export.sh
 *.ignore.txt
 .DS_Store
+vite.env.local.js
+/deploy/*
+!/deploy/.gitkeep
