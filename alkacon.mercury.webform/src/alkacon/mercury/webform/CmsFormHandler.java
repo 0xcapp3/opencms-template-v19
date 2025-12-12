@@ -1275,7 +1275,7 @@ public class CmsFormHandler extends CmsJspActionElement {
 
         int pagingPos = fields.size();
         if (CmsStringUtil.isNotEmpty(getParameter(PARAM_PAGE + getFormConfiguration().getConfigId()))) {
-            int value = new Integer(getParameter(PARAM_PAGE + getFormConfiguration().getConfigId())).intValue();
+            int value = Integer.valueOf(getParameter(PARAM_PAGE + getFormConfiguration().getConfigId())).intValue();
             pagingPos = CmsPagingField.getLastFieldPosFromPage(this, value) + 1;
         }
 
@@ -1599,15 +1599,15 @@ public class CmsFormHandler extends CmsJspActionElement {
         if (getParameterMap().containsKey(PARAM_BACK + getFormConfiguration().getConfigId())
             && getParameterMap().containsKey(pagingParam)) {
             String[] pagingString = getParameterMap().get(pagingParam);
-            currPage = new Integer(pagingString[0]).intValue();
+            currPage = Integer.valueOf(pagingString[0]).intValue();
             currPage = CmsPagingField.getPreviousPage(currPage);
         } else if (getParameterMap().containsKey(pagingParam) && !hasValidationErrors()) {
             String[] pagingString = getParameterMap().get(pagingParam);
-            currPage = new Integer(pagingString[0]).intValue();
+            currPage = Integer.valueOf(pagingString[0]).intValue();
             currPage = CmsPagingField.getNextPage(currPage);
         } else if (getParameterMap().containsKey(pagingParam) && hasValidationErrors()) {
             String[] pagingString = getParameterMap().get(pagingParam);
-            currPage = new Integer(pagingString[0]).intValue();
+            currPage = Integer.valueOf(pagingString[0]).intValue();
         }
         pagingPos = CmsPagingField.getFirstFieldPosFromPage(this, currPage);
         fieldNr = pagingPos;

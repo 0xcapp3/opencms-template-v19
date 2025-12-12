@@ -178,21 +178,6 @@ public final class CmsFieldFactory {
         return null;
     }
 
-    /**
-     * @see java.lang.Object#finalize()
-     */
-    @Override
-    protected void finalize() throws Throwable {
-
-        try {
-            if (m_registeredFieldTypes != null) {
-                m_registeredFieldTypes.clear();
-            }
-        } catch (Throwable t) {
-            // ignore
-        }
-        super.finalize();
-    }
 
     /**
      * Registers a class as a field type in the factory.<p>

@@ -39,8 +39,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-import javax.annotation.Nonnull;
-
 import org.apache.commons.logging.Log;
 
 /**
@@ -791,7 +789,6 @@ public class CmsSubscriptionManager {
      * @param user the user to read the registration information for.
      * @return the user's registration information.
      */
-    @Nonnull
     private Map<String, ActivationInfo> readRegistrationInfo(CmsUser user) {
 
         Map<String, ActivationInfo> result = new HashMap<>();

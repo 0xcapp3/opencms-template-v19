@@ -281,11 +281,11 @@ public class CmsPagingField extends A_CmsField {
             I_CmsField field = fields.get(pos);
             // only use the paging fields
             if (field instanceof CmsPagingField) {
-                pfields.add(new Integer(pos));
+                pfields.add(Integer.valueOf(pos));
             }
         }
         // add the last element as end element
-        pfields.add(new Integer(fields.size() - 1));
+        pfields.add(Integer.valueOf(fields.size() - 1));
         return pfields;
     }
 
@@ -311,7 +311,7 @@ public class CmsPagingField extends A_CmsField {
         stAttributes.put("prevbutton", prevButton);
         stAttributes.put("nextbutton", messages.key(I_CmsFormMessages.FORM_BUTTON_NEXT));
         // set current form page
-        stAttributes.put("page", new Integer(CmsPagingField.getPageFromField(formHandler, getFieldNr())));
+        stAttributes.put("page", Integer.valueOf(CmsPagingField.getPageFromField(formHandler, getFieldNr())));
 
         return createHtml(formHandler, messages, stAttributes, getType(), null, null, showMandatory);
     }

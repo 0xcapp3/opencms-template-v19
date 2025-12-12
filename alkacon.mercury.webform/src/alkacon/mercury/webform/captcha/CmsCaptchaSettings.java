@@ -211,7 +211,7 @@ public final class CmsCaptchaSettings implements Cloneable {
     private Color m_fontColor = Color.BLACK;
 
     /** The amount of holes per glyph. */
-    private Integer m_holesPerGlyph = new Integer(0);
+    private Integer m_holesPerGlyph = Integer.valueOf(0);
 
     /** The image height in pixels. */
     private int m_imageHeight = 55;
@@ -1051,7 +1051,7 @@ public final class CmsCaptchaSettings implements Cloneable {
      */
     public void setHolesPerGlyph(int holes) {
 
-        m_holesPerGlyph = new Integer(holes);
+        m_holesPerGlyph = Integer.valueOf(holes);
     }
 
     /**

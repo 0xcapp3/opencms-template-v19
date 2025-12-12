@@ -597,7 +597,7 @@ public abstract class A_CmsField implements I_CmsField {
      */
     public void setTwoCols(boolean twoCols) {
 
-        m_twoCols = new Boolean(twoCols);
+        m_twoCols = Boolean.valueOf(twoCols);
     }
 
     /**
@@ -748,21 +748,6 @@ public abstract class A_CmsField implements I_CmsField {
         return errorMessage;
     }
 
-    /**
-     * @see java.lang.Object#finalize()
-     */
-    @Override
-    protected void finalize() throws Throwable {
-
-        try {
-            if (m_items != null) {
-                m_items.clear();
-            }
-        } catch (Throwable t) {
-            // ignore
-        }
-        super.finalize();
-    }
 
     /**
      * Returns the selected items.<p>

@@ -177,7 +177,7 @@ public abstract class A_CmsFormDataHandler extends CmsJspActionElement {
                 ids.add(formdataUuids);
             }
         }
-        CmsRelationFilter relationFilter = CmsRelationFilter.relationsToStructureId(new CmsUUID(eventUuid));
+        CmsRelationFilter relationFilter = CmsRelationFilter.relationsToStructureId(CmsUUID.valueOf(eventUuid));
         if (relationFilter != null) {
             try {
                 List<CmsRelation> relationsToResource = cms.readRelations(relationFilter);
@@ -238,7 +238,7 @@ public abstract class A_CmsFormDataHandler extends CmsJspActionElement {
      */
     public static CmsResource readResource(CmsObject clone, String paramUuid) {
 
-        CmsUUID uuid = new CmsUUID(paramUuid);
+        CmsUUID uuid = CmsUUID.valueOf(paramUuid);
         if (!clone.existsResource(uuid, CmsResourceFilter.ALL)) {
             return null;
         }

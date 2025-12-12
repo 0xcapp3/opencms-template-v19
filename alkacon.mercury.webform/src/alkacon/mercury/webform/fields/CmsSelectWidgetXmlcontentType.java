@@ -709,7 +709,7 @@ public class CmsSelectWidgetXmlcontentType extends CmsSelectWidget {
                     while (itTypes.hasNext()) {
                         resType = itTypes.next();
                         m_resourceTypeIDs.add(
-                            new Integer(OpenCms.getResourceManager().getResourceType(resType).getTypeId()));
+                            Integer.valueOf(OpenCms.getResourceManager().getResourceType(resType).getTypeId()));
                     }
                 } catch (CmsLoaderException e) {
                     throw new CmsIllegalArgumentException(

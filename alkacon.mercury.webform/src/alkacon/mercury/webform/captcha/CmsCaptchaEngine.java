@@ -161,23 +161,23 @@ public class CmsCaptchaEngine extends ImageCaptchaEngine {
         ColorGenerator colorGenerator = new SingleColorGenerator(m_settings.getFontColor());
 
         TextPaster paster = new DecoratedRandomTextPaster(
-            new Integer(m_settings.getMinPhraseLength()),
-            new Integer(m_settings.getMaxPhraseLength()),
+            Integer.valueOf(m_settings.getMinPhraseLength()),
+            Integer.valueOf(m_settings.getMaxPhraseLength()),
             colorGenerator,
             new TextDecorator[] {textDecorator});
 
         BackgroundGenerator background;
         if (m_settings.isUseBackgroundImage()) {
             background = new FileReaderRandomBackgroundGenerator(
-                new Integer(m_settings.getImageWidth()),
-                new Integer(m_settings.getImageHeight()),
+                Integer.valueOf(m_settings.getImageWidth()),
+                Integer.valueOf(m_settings.getImageHeight()),
                 OpenCms.getSystemInfo().getAbsoluteRfsPathRelativeToWebApplication(
                     "resources/captchabackgrounds/mercuryform/"));
 
         } else {
             background = new UniColorBackgroundGenerator(
-                new Integer(m_settings.getImageWidth()),
-                new Integer(m_settings.getImageHeight()),
+                Integer.valueOf(m_settings.getImageWidth()),
+                Integer.valueOf(m_settings.getImageHeight()),
                 m_settings.getBackgroundColor());
         }
 
@@ -197,8 +197,8 @@ public class CmsCaptchaEngine extends ImageCaptchaEngine {
         if (CmsStringUtil.FALSE.equalsIgnoreCase(param)) {
 
             font = new RandomFontGenerator(
-                new Integer(m_settings.getMinFontSize()),
-                new Integer(m_settings.getMaxFontSize()));
+                Integer.valueOf(m_settings.getMinFontSize()),
+                Integer.valueOf(m_settings.getMaxFontSize()));
         } else {
             Font[] fonts = getFilteredFonts(fontPrefix);
             if (fonts.length > 0) {
@@ -206,13 +206,13 @@ public class CmsCaptchaEngine extends ImageCaptchaEngine {
                 LOG.debug(Messages.get().getBundle().key(Messages.DEBUG_CAPTCHA_USE_FONT_0));
 
                 font = new RandomFontGenerator(
-                    new Integer(m_settings.getMinFontSize()),
-                    new Integer(m_settings.getMaxFontSize()),
+                    Integer.valueOf(m_settings.getMinFontSize()),
+                    Integer.valueOf(m_settings.getMaxFontSize()),
                     fonts);
             } else {
                 font = new RandomFontGenerator(
-                    new Integer(m_settings.getMinFontSize()),
-                    new Integer(m_settings.getMaxFontSize()));
+                    Integer.valueOf(m_settings.getMinFontSize()),
+                    Integer.valueOf(m_settings.getMaxFontSize()));
             }
         }
 

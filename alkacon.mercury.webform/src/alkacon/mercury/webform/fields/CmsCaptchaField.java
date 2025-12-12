@@ -299,7 +299,7 @@ public class CmsCaptchaField extends A_CmsField {
                         LOG.info(
                             Messages.get().getBundle().key(
                                 Messages.LOG_ERR_CAPTCHA_CONFIG_IMAGE_SIZE_2,
-                                new Object[] {m_captchaSettings.getPresetPath(), new Integer(maxTries)}));
+                                new Object[] {m_captchaSettings.getPresetPath(), Integer.valueOf(maxTries)}));
                     }
                     m_captchaSettings.setImageHeight((int)(m_captchaSettings.getImageHeight() * 1.1));
                     m_captchaSettings.setImageWidth((int)(m_captchaSettings.getImageWidth() * 1.1));
